@@ -11,6 +11,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 export default function Navbar() {
   const [auth, setAuth] = useState(true);
@@ -44,6 +46,7 @@ export default function Navbar() {
       </FormGroup> */}
       <AppBar position="static">
         <Toolbar
+          id="back-to-top-anchor"
           sx={{
             maxWidth: "992px",
             width: "100%",
@@ -52,9 +55,9 @@ export default function Navbar() {
             mx: "auto",
           }}
         >
-          <Typography variant="h6" component="div">
+          <Button size="large" component={Link} to="/">
             SocialSphere
-          </Typography>
+          </Button>
           {auth && (
             <div>
               <IconButton
@@ -82,7 +85,13 @@ export default function Navbar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem
+                  onClick={handleClose}
+                  component={Link}
+                  to="/profile/xyz"
+                >
+                  Profile
+                </MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
               </Menu>
             </div>

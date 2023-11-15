@@ -15,7 +15,7 @@ import { Button, TextField } from "@mui/material";
 
 const CreatePost = () => {
   return (
-    <Card sx={{marginBottom: "20px"}}>
+    <Card sx={{ marginBottom: "20px" }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -39,8 +39,9 @@ const CreatePost = () => {
           fullWidth
         />
       </CardContent>
-      <CardActions >
-        <IconButton aria-label="add to favorites" sx={{marginRight: "auto"}}>
+      <CardActions>
+        <IconButton component="label" aria-label="add to favorites" sx={{ marginRight: "auto" }}>
+          <input type="file" hidden />
           <ImageIcon />
         </IconButton>
         <Button>Post</Button>

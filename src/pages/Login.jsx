@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CopyRight from "../components/CopyRight";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -47,9 +48,7 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    document.title = "Login";
-  }, []);
+  useDocumentTitle("Login");
 
   return (
     <Container
@@ -113,7 +112,7 @@ const Login = () => {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 1, mb: 2 }}
           >
             Sign In
           </Button>

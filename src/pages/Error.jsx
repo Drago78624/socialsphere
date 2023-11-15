@@ -1,10 +1,13 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const Error = () => {
   const error = useRouteError();
   console.error(error);
+
+  useDocumentTitle("Error");
 
   return (
     <Box

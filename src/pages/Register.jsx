@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CopyRight from "../components/CopyRight";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -53,9 +54,7 @@ const Register = () => {
     }
   };
 
-  useEffect(() => {
-    document.title = "Register";
-  }, []);
+  useDocumentTitle("Register");
 
   return (
     <Container

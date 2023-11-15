@@ -7,10 +7,14 @@ import App from "./App";
 import Error from "./pages/Error";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import Profile from "./pages/Profile";
+import { indigo, pink } from "@mui/material/colors";
 
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
+    primary: indigo,
+    secondary: pink,
   },
 });
 
@@ -22,6 +26,7 @@ const router = createBrowserRouter([
   },
   { path: "login", element: <Login /> },
   { path: "register", element: <Register /> },
+  { path: "profile/:id", element: <Profile /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
